@@ -1,0 +1,35 @@
+.popup-home {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    div {
+        max-width: 60%;
+        margin: 10% 20%;
+        position: relative;
+
+        img {
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .icon-close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 18px;
+            color: silver;
+
+            &:hover {
+                color: #751515;
+                cursor: pointer;
+                font-size: 20px;
+                transition: 1s;
+            }
+        }
+    }
+}
