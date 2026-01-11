@@ -5,12 +5,44 @@
     animation-delay: 5s;
     animation: animarSearchInput 0.5s ease-in-out;
     width: 100%;
-    background-color: #ffffff80;
+    background-color: #1a563275;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .search-input {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        input {
+            width: 60%;
+            padding: 1rem;
+            font-size: 18px;
+            background-color: #ffffff;
+            border-color: transparent;
+            border-radius: 1.5rem;
+            outline: 0;
+        }
+    }
+    .btn-close {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+
+        button {
+            background-color: transparent;
+            font-size: 20px;
+            border: transparent;
+            color: #1a5632;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
+
 
 @keyframes animarSearchInput {
     0% {

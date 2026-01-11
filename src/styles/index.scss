@@ -12,4 +12,8 @@ body {
 
 .container-app {
   position: relative;
+  height: 100vh;
+  background-image: url(/public/home/home-page.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -1,14 +1,18 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import HeaderComponent from "./components/header";
-import HomePage from "./pages/home";
-import SearchPage from "./pages/search";
+import { SearchProvider } from "./context/SearchContext";
+import RoutesDefault from "./routes/RoutesDefault";
+import AboutPage from './pages/about';
 
 function App() {
   return (
-    <main className="container-app">
-      <HomePage />
-      <HeaderComponent />
-      <SearchPage />
-    </main>
+    <SearchProvider>
+      <Router>
+        <main className="container-app">
+          <RoutesDefault />
+        </main>
+      </Router>
+    </SearchProvider>
   );
 }
 

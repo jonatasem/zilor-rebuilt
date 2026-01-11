@@ -1,25 +1,20 @@
 import { useTranslation } from 'react-i18next';
-import { 
-    FaSearch,
-    FaLinkedin,
-    FaYoutube
-} from "react-icons/fa";
+import { FaSearch, FaLinkedin, FaYoutube } from "react-icons/fa";
 import './index.scss';
+import { useSearch } from '../../context/SearchContext'; 
 
 export default function HeaderComponent(){
     const { t, i18n } = useTranslation();
+    const { openSearch } = useSearch(); 
 
     const alterarIdioma = (sigla) => {
         i18n.changeLanguage(sigla);
     };
-
+    
     return (
         <header className="container-header">
             <article className="logo">
-                <img 
-                    src={t('logo_url')} 
-                    alt={t('logo_alt')}
-                />
+                <img src={t('logo_url')} alt={t('logo_alt')} />
             </article>
             <article className="language">
                 <button onClick={() => alterarIdioma('pt')}>PT</button>|
@@ -27,7 +22,7 @@ export default function HeaderComponent(){
                 <button onClick={() => alterarIdioma('es')}>ES</button>
                 <div className="menu-header">
                     <div className="search-header">
-                        <FaSearch className='icon-search'/>
+                        <FaSearch className='icon-search' onClick={openSearch} style={{cursor: 'pointer'}}/>
                     </div>
                     <div className="social-media">
                         <FaLinkedin className='icon-linkedin'/>
@@ -36,5 +31,5 @@ export default function HeaderComponent(){
                 </div>
             </article>
         </header>
-    )
+    );
 }
